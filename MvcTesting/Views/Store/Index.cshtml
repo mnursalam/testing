@@ -1,0 +1,53 @@
+﻿@model IEnumerable<MvcTesting.Models.Store>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.countJual)
+        </th>
+        <th>
+            Actor
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {    
+    <tr>
+        <td>
+            @Html.DisplayFor(a => item.name)
+        </td>
+        <td>
+            @Html.DisplayFor(a => item.address)
+        </td>
+        <td>
+            @Html.DisplayFor(a => item.countJual) 
+            
+        </td>
+        <td>@foreach (var act in item.Acts)
+            {
+                @Html.DisplayFor(b => act.Title) <br />
+            }
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>

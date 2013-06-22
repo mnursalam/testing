@@ -1,0 +1,35 @@
+﻿@model MvcTesting.Models.Act
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Act</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Title) :    
+         @Html.DisplayFor(model => model.Title)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Address) :
+        @Html.DisplayFor(model => model.Address)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.JenisKelamin) :    
+        @Html.DisplayFor(model => model.JenisKelamin)
+    </div>
+
+    <div class="display-label">
+         Movie :    
+        @Html.DisplayFor(model => model.Movies.Title)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
