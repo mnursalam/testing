@@ -70,6 +70,7 @@ namespace MvcTesting.Controllers
         public ActionResult Edit(int id = 0)
         {
             Act act = db.Acts.Find(id);
+            Console.WriteLine("1================================");
             PopulateMoviesDropDownList2(act.MovieID);
             PopulateStoreDropDownList(act.StoreID);
             PopulateDropdownJenisKelamin(act.JenisKelamin);
@@ -138,9 +139,15 @@ namespace MvcTesting.Controllers
 
         private void PopulateDropdownJenisKelamin(int jk = 0)
         {
+            Console.WriteLine("s================================");
             ViewBag.JenisKelamin = new SelectList(new[]{
                                               new {ID="1",Name="Laki laki"},
                                               new {ID="2",Name="Perempuan"},},
+                                               "ID", "Name", jk);
+            ViewBag.JenisKelamin2 = new SelectList(new[]{
+                                              new {ID="1",Name="Laki laki"},
+                                              new {ID="2",Name="Waria"},
+                                              new {ID="3",Name="Perempuan"},},
                                                "ID", "Name", jk);
             
         }
