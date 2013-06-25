@@ -13,7 +13,7 @@ namespace MvcTesting.Models
         public int Id { get; set; }
         public string Title { get; set; }      
         public string Address { get; set; }
-        public int JenisKelamin{get; set;}
+        public int JenisKelamin{get; set;}        
         public int MovieID { get; set; }
         public Movie Movies { get; set; }
         public int StoreID { get; set; }

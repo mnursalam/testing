@@ -48,3 +48,8 @@ D:\wgs\dotnet\MvcTesting\MvcTesting\obj\Debug\MvcTesting.dll
 D:\wgs\dotnet\MvcTesting\MvcTesting\obj\Debug\MvcTesting.pdb
 D:\WGS\dotnet\MvcTesting\MvcTesting\obj\Debug\MvcTesting.Migrations.initials.resources
 D:\WGS\dotnet\MvcTesting\MvcTesting\obj\Debug\MvcTesting.csproj.GenerateResource.Cache
+D:\WGS\dotnet\MvcTesting\MvcTesting\obj\Debug\MvcTesting.Migrations.AddSukuOnAct.resources
+D:\WGS\dotnet\MvcTesting\MvcTesting\obj\Debug\MvcTesting.Migrations.AddSukuLagiOnAct.resources
+D:\WGS\dotnet\MvcTesting\MvcTesting\obj\Debug\MvcTesting.Migrations.AddSukuLagiLagiOnAct.resources
+D:\WGS\dotnet\MvcTesting\MvcTesting\obj\Debug\MvcTesting.Migrations.RemoveSukuLagiLagiOnAct.resources
+D:\WGS\dotnet\MvcTesting\MvcTesting\obj\Debug\MvcTesting.Migrations.RemoveSukuOnAct.resources
