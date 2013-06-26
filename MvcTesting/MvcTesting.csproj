@@ -174,35 +174,14 @@
     <Compile Include="Migrations\201306250411179_initials.Designer.cs">
       <DependentUpon>201306250411179_initials.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201306250456244_AddSukuOnAct.cs" />
-    <Compile Include="Migrations\201306250456244_AddSukuOnAct.Designer.cs">
-      <DependentUpon>201306250456244_AddSukuOnAct.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201306250457248_AddSukuLagiOnAct.cs" />
-    <Compile Include="Migrations\201306250457248_AddSukuLagiOnAct.Designer.cs">
-      <DependentUpon>201306250457248_AddSukuLagiOnAct.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201306250458045_AddSukuLagiLagiOnAct.cs" />
-    <Compile Include="Migrations\201306250458045_AddSukuLagiLagiOnAct.Designer.cs">
-      <DependentUpon>201306250458045_AddSukuLagiLagiOnAct.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201306250458387_RemoveSukuLagiLagiOnAct.cs" />
-    <Compile Include="Migrations\201306250458387_RemoveSukuLagiLagiOnAct.Designer.cs">
-      <DependentUpon>201306250458387_RemoveSukuLagiLagiOnAct.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201306250459262_RemoveSukuOnAct.cs" />
-    <Compile Include="Migrations\201306250459262_RemoveSukuOnAct.Designer.cs">
-      <DependentUpon>201306250459262_RemoveSukuOnAct.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201306250502314_AddTableEmployee.cs" />
-    <Compile Include="Migrations\201306250502314_AddTableEmployee.Designer.cs">
-      <DependentUpon>201306250502314_AddTableEmployee.cs</DependentUpon>
+    <Compile Include="Migrations\201306260355546_addSeveralItems.cs" />
+    <Compile Include="Migrations\201306260355546_addSeveralItems.Designer.cs">
+      <DependentUpon>201306260355546_addSeveralItems.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Act.cs" />
     <Compile Include="Models\dbContext.cs" />
-    <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Models\Store.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -327,14 +306,12 @@
     <Content Include="Views\Movie\Index.cshtml" />
     <Content Include="Views\Movie\Details.cshtml" />
     <Content Include="Views\Movie\Create.cshtml" />
-    <Content Include="Views\Movie\Edit.cshtml" />
+    <None Include="Views\Movie\Edit.cshtml" />
     <Content Include="Views\Movie\Delete.cshtml" />
     <Content Include="Views\Act\Index.cshtml" />
     <Content Include="Views\Act\Details.cshtml" />
     <Content Include="Views\Act\Create.cshtml" />
-    <Content Include="Views\Act\Edit.cshtml" />
     <Content Include="Views\Act\Delete.cshtml" />
-    <Content Include="Views\Movie\Aboutme.cshtml" />
     <Content Include="Views\Movie\Aboutyou.cshtml" />
     <Content Include="Views\Store\Index.cshtml" />
     <Content Include="Views\Store\Details.cshtml" />
@@ -352,23 +329,8 @@
     <EmbeddedResource Include="Migrations\201306250411179_initials.resx">
       <DependentUpon>201306250411179_initials.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201306250456244_AddSukuOnAct.resx">
-      <DependentUpon>201306250456244_AddSukuOnAct.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201306250457248_AddSukuLagiOnAct.resx">
-      <DependentUpon>201306250457248_AddSukuLagiOnAct.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201306250458045_AddSukuLagiLagiOnAct.resx">
-      <DependentUpon>201306250458045_AddSukuLagiLagiOnAct.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201306250458387_RemoveSukuLagiLagiOnAct.resx">
-      <DependentUpon>201306250458387_RemoveSukuLagiLagiOnAct.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201306250459262_RemoveSukuOnAct.resx">
-      <DependentUpon>201306250459262_RemoveSukuOnAct.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201306250502314_AddTableEmployee.resx">
-      <DependentUpon>201306250502314_AddTableEmployee.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201306260355546_addSeveralItems.resx">
+      <DependentUpon>201306260355546_addSeveralItems.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
@@ -389,7 +351,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>49583</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:3000/</IISUrl>
+          <IISUrl>http://localhost:3004/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

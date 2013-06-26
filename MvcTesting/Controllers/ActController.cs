@@ -60,7 +60,7 @@ namespace MvcTesting.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-
+            Create();
             return View(act);
         }
 

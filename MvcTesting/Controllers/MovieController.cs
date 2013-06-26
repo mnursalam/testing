@@ -111,7 +111,7 @@ namespace MvcTesting.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult Aboutme(String data)
+        public ActionResult Aboutme(String data = "")
         {
             var msg = "Dan Rea cantik, " + data.ToString();
             Console.WriteLine(msg);

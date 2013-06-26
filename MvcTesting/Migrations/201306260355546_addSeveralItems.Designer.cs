@@ -5,13 +5,13 @@ namespace MvcTesting.Migrations
     using System.Data.Entity.Migrations.Infrastructure;
     using System.Resources;
     
-    public sealed partial class RemoveSukuOnAct : IMigrationMetadata
+    public sealed partial class addSeveralItems : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(RemoveSukuOnAct));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(addSeveralItems));
         
         string IMigrationMetadata.Id
         {
-            get { return "201306250459262_RemoveSukuOnAct"; }
+            get { return "201306260355546_addSeveralItems"; }
         }
         
         string IMigrationMetadata.Source
