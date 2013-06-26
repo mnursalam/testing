@@ -146,14 +146,19 @@ namespace MvcTesting.Controllers
         [HttpPost]
         public ActionResult ajax_create(Movie movie)
         {
-            Console.WriteLine("create ajax");
+            Console.WriteLine("=================" + movie.Title);
+            Console.WriteLine("1 =================" + db.Movies.Count());
             if (ModelState.IsValid)
-            {
+            {                
                 db.Movies.Add(movie);
+                Console.WriteLine("2 =================" + db.Movies.Count());
                 db.SaveChanges();
-                return PartialView("ajax_list");
+                Console.WriteLine("3 =================" + db.Movies.Count());
+                Console.WriteLine("================= kesave " + movie.Title);
+                //return View(db.Movies.ToList());
+                return PartialView("ajax_list", db.Movies.ToList());
             }
-
+            //return View();
             return PartialView("Page_form");
         }
 

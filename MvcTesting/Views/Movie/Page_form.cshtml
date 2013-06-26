@@ -1,13 +1,14 @@
 ﻿ @model MvcTesting.Models.Movie
 
-@{
-    ViewBag.Title = "Create";
-}
-
 <h2>Create</h2>
 
-@using (Html.BeginForm("ajax_create", "Movie", FormMethod.Post, new Dictionary<string, Object> { { "enctype", "multipart/form-data" }, { "data-ajax", "true" } }))
-{
+
+@using (Ajax.BeginForm("ajax_create", "Movie", FormMethod.Post,
+                    new AjaxOptions{
+                        InsertionMode = InsertionMode.Replace,
+                        HttpMethod = "POST",
+                        UpdateTargetId = "result"
+                    })){
     
     @Html.ValidationSummary(true)
 
