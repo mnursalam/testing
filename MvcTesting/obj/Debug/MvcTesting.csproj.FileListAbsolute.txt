@@ -45,7 +45,7 @@ D:\wgs\dotnet\MvcTesting\MvcTesting\bin\DotNetOpenAuth.OAuth.xml
 D:\wgs\dotnet\MvcTesting\MvcTesting\bin\DotNetOpenAuth.OpenId.xml
 D:\wgs\dotnet\MvcTesting\MvcTesting\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
 D:\wgs\dotnet\MvcTesting\MvcTesting\obj\Debug\MvcTesting.Migrations.initials.resources
+D:\wgs\dotnet\MvcTesting\MvcTesting\obj\Debug\MvcTesting.Migrations.addSeveralItems.resources
 D:\wgs\dotnet\MvcTesting\MvcTesting\obj\Debug\MvcTesting.csproj.GenerateResource.Cache
 D:\wgs\dotnet\MvcTesting\MvcTesting\obj\Debug\MvcTesting.dll
 D:\wgs\dotnet\MvcTesting\MvcTesting\obj\Debug\MvcTesting.pdb
-D:\wgs\dotnet\MvcTesting\MvcTesting\obj\Debug\MvcTesting.Migrations.addSeveralItems.resources

@@ -48,6 +48,7 @@ namespace MvcTesting.Controllers
         [HttpPost]
         public ActionResult Create(Movie movie)
         {
+            Console.WriteLine("create not ajax");
             if (ModelState.IsValid)
             {
                 db.Movies.Add(movie);
@@ -127,12 +128,14 @@ namespace MvcTesting.Controllers
 
         public ActionResult ajax_page()
         {
-            return View();
+            var list = db.Movies.ToList();
+            return View(list);
         }
 
         public ActionResult ajax_list()
         {
-            return PartialView("ajax_list");
+            var list = db.Movies.ToList();
+            return PartialView("ajax_list", list);
         }
 
         public ActionResult ajax_new_form(string data = "")
@@ -143,6 +146,7 @@ namespace MvcTesting.Controllers
         [HttpPost]
         public ActionResult ajax_create(Movie movie)
         {
+            Console.WriteLine("create ajax");
             if (ModelState.IsValid)
             {
                 db.Movies.Add(movie);
