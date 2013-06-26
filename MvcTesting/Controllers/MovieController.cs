@@ -101,7 +101,6 @@ namespace MvcTesting.Controllers
 
         //
         // POST: /Movie/Delete/5
-
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {
@@ -111,7 +110,7 @@ namespace MvcTesting.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult Aboutme(String data = "")
+        public ActionResult Aboutme(String data = "pisan euy")
         {
             var msg = "Dan Rea cantik, " + data.ToString();
             Console.WriteLine(msg);
@@ -119,12 +118,26 @@ namespace MvcTesting.Controllers
             return View();
         }
 
-        public ActionResult Aboutyou(int id)
+        public ActionResult Aboutyou(int id=0)
         {
             var msg = "Dan Nungky, " + id.ToString();
-            Console.WriteLine(msg);
             ViewBag.Message = msg;
             return View();
+        }
+
+        public ActionResult ajax_page()
+        {
+            return View();
+        }
+
+        public ActionResult ajax_list()
+        {
+            return PartialView("ajax_list");
+        }
+
+        public ActionResult ajax_new_form(string data = "")
+        {
+            return PartialView("Page_form");
         }
 
         protected override void Dispose(bool disposing)
