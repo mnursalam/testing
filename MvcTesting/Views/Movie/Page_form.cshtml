@@ -50,7 +50,6 @@
     </fieldset>
 }
 
-<div>
-    <!--@Html.ActionLink("Back to List", "Index")-->
-    @Ajax.ActionLink("Back to List", "ajax_new_form", new { data = "testing bro" }, new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "addressList" ,  HttpMethod = "GET"})
+<div>    
+    @Ajax.ActionLink("Back in List", "ajax_list", new { data = "testing bro" }, new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "result" ,  HttpMethod = "GET"})
 </div>

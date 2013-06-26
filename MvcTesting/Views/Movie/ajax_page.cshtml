@@ -3,12 +3,11 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div id="addressList">      
-  <h2>ajax_list</h2>
-  @Ajax.ActionLink("Add Data", "ajax_new_form", new { data = "testing bro" }, new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "addressList" ,  HttpMethod = "GET"})
+<div id="result">       
+    @Html.Partial("ajax_list")
 </div>
 
 @section scripts{
-    @Scripts.Render("~/Scripts/jquery.unobtrusive-ajax.min.js")
-    @Scripts.Render("~/bundles/jqueryval")
+  @Scripts.Render("~/Scripts/jquery.unobtrusive-ajax.min.js")
+  @Scripts.Render("~/bundles/jqueryval")
 }
