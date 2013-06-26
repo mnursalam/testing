@@ -105,6 +105,7 @@ namespace MvcTesting.Controllers
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {
+            Console.WriteLine("1==================================== ajax delete");
             Movie movie = db.Movies.Find(id);
             db.Movies.Remove(movie);
             db.SaveChanges();
@@ -146,20 +147,35 @@ namespace MvcTesting.Controllers
         [HttpPost]
         public ActionResult ajax_create(Movie movie)
         {
-            Console.WriteLine("=================" + movie.Title);
-            Console.WriteLine("1 =================" + db.Movies.Count());
             if (ModelState.IsValid)
             {                
                 db.Movies.Add(movie);
-                Console.WriteLine("2 =================" + db.Movies.Count());
                 db.SaveChanges();
-                Console.WriteLine("3 =================" + db.Movies.Count());
-                Console.WriteLine("================= kesave " + movie.Title);
-                //return View(db.Movies.ToList());
                 return PartialView("ajax_list", db.Movies.ToList());
             }
-            //return View();
             return PartialView("Page_form");
+        }
+
+        [HttpPost]
+        public ActionResult ajax_update(Movie movie)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(movie).State = EntityState.Modified;
+                db.SaveChanges();
+                return PartialView("ajax_list", db.Movies.ToList());
+            }
+            return PartialView("Page_form");
+        }
+
+        //[HttpPost, ActionName("Delete")]
+        [HttpPost]
+        public ActionResult ajax_delete(int id)
+        {
+            Movie movie = db.Movies.Find(id);
+            db.Movies.Remove(movie);
+            db.SaveChanges();
+            return PartialView("ajax_list", db.Movies.ToList());
         }
 
         protected override void Dispose(bool disposing)
