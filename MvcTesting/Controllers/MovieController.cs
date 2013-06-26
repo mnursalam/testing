@@ -48,7 +48,6 @@ namespace MvcTesting.Controllers
         [HttpPost]
         public ActionResult Create(Movie movie)
         {
-            Console.WriteLine("create not ajax");
             if (ModelState.IsValid)
             {
                 db.Movies.Add(movie);
@@ -79,7 +78,7 @@ namespace MvcTesting.Controllers
         public ActionResult Edit(Movie movie)
         {
             if (ModelState.IsValid)
-            {
+            {                
                 db.Entry(movie).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -105,7 +104,6 @@ namespace MvcTesting.Controllers
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {
-            Console.WriteLine("1==================================== ajax delete");
             Movie movie = db.Movies.Find(id);
             db.Movies.Remove(movie);
             db.SaveChanges();
@@ -144,16 +142,36 @@ namespace MvcTesting.Controllers
             return PartialView("Page_form");
         }
 
+        public ActionResult ajax_detail(int id = 0)
+        {
+            Movie movie = db.Movies.Find(id);
+            if (movie == null)
+            {
+                return HttpNotFound();
+            }
+            return PartialView("ajax_detail", movie);
+        }
+
+        public ActionResult ajax_edit(int id = 0)
+        {
+            Movie movie = db.Movies.Find(id);
+            if (movie == null)
+            {
+                return HttpNotFound();
+            }
+            return PartialView("ajax_edit", movie);
+        }
+
         [HttpPost]
         public ActionResult ajax_create(Movie movie)
         {
             if (ModelState.IsValid)
-            {                
+            {
                 db.Movies.Add(movie);
                 db.SaveChanges();
                 return PartialView("ajax_list", db.Movies.ToList());
             }
-            return PartialView("Page_form");
+            return PartialView("Page_form", movie);
         }
 
         [HttpPost]
@@ -161,14 +179,29 @@ namespace MvcTesting.Controllers
         {
             if (ModelState.IsValid)
             {
+                Movie movieToUpdate = db.Movies.Where(p => p.Id == movie.Id).FirstOrDefault();
+                if (movieToUpdate != null)
+                {
+                    db.Entry(movieToUpdate).CurrentValues.SetValues(movie);
+                }
+                db.SaveChanges();
+                return PartialView("ajax_list", db.Movies.ToList());
+            }
+            return PartialView("ajax_edit", movie);
+        }
+
+        [HttpPost]
+        public ActionResult ajax_update2(Movie movie)
+        {
+            if (ModelState.IsValid)
+            {                
                 db.Entry(movie).State = EntityState.Modified;
                 db.SaveChanges();
                 return PartialView("ajax_list", db.Movies.ToList());
             }
-            return PartialView("Page_form");
+            return PartialView("ajax_edit", movie);
         }
-
-        //[HttpPost, ActionName("Delete")]
+        
         [HttpPost]
         public ActionResult ajax_delete(int id)
         {

@@ -308,6 +308,8 @@
     <Content Include="Views\Movie\Create.cshtml" />
     <Content Include="Views\Movie\ajax_list.cshtml" />
     <Content Include="Views\Movie\ajax_page.cshtml" />
+    <Content Include="Views\Movie\ajax_edit.cshtml" />
+    <Content Include="Views\Movie\ajax_detail.cshtml" />
     <None Include="Views\Movie\Edit.cshtml" />
     <Content Include="Views\Movie\Delete.cshtml" />
     <Content Include="Views\Act\Index.cshtml" />

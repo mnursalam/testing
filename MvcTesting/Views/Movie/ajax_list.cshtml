@@ -38,9 +38,15 @@
         <td>
             @Html.DisplayFor(modelItem => item.Price) 
         </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |            
+        <td>            
+            @Ajax.ActionLink("Edit", "ajax_edit", new { id = item.Id }, 
+                 new AjaxOptions { HttpMethod = "GET", 
+                 InsertionMode = InsertionMode.Replace, 
+                 UpdateTargetId = "result"}) |
+            @Ajax.ActionLink("Detail", "ajax_detail", new { id = item.Id }, 
+                 new AjaxOptions { HttpMethod = "GET", 
+                 InsertionMode = InsertionMode.Replace, 
+                 UpdateTargetId = "result"}) |            
             @Ajax.ActionLink("Delete", "ajax_delete", new { id = item.Id }, 
                  new AjaxOptions { HttpMethod = "POST", 
                  InsertionMode = InsertionMode.Replace, 

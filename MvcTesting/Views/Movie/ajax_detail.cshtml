@@ -1,0 +1,46 @@
+﻿@model MvcTesting.Models.Movie
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Movie</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Title)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Title)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ReleaseDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ReleaseDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Genre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Genre)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Price)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Price)
+    </div>
+</fieldset>
+<p>
+    @Ajax.ActionLink("Edit", "ajax_edit", new { id = @Html.DisplayFor(model => model.Id) }, 
+                 new AjaxOptions { HttpMethod = "GET", 
+                 InsertionMode = InsertionMode.Replace, 
+                 UpdateTargetId = "result"})|
+    @Ajax.ActionLink("Back in List", "ajax_list", new { data = "testing bro" }, new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "result" ,  HttpMethod = "GET"})
+</p>
