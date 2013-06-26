@@ -53,3 +53,5 @@ D:\WGS\dotnet\MvcTesting\MvcTesting\obj\Debug\MvcTesting.Migrations.AddSukuLagiO
 D:\WGS\dotnet\MvcTesting\MvcTesting\obj\Debug\MvcTesting.Migrations.AddSukuLagiLagiOnAct.resources
 D:\WGS\dotnet\MvcTesting\MvcTesting\obj\Debug\MvcTesting.Migrations.RemoveSukuLagiLagiOnAct.resources
 D:\WGS\dotnet\MvcTesting\MvcTesting\obj\Debug\MvcTesting.Migrations.RemoveSukuOnAct.resources
+D:\WGS\dotnet\MvcTesting\MvcTesting\obj\Debug\MvcTesting.Migrations.AddTableEmployee.resources
+D:\WGS\dotnet\MvcTesting\MvcTesting\obj\Debug\MvcTesting.csprojResolveAssemblyReference.cache

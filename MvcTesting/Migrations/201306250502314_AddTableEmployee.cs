@@ -12,16 +12,15 @@ namespace MvcTesting.Migrations
                 c => new
                 {
                     Id = c.Int(nullable: false, identity: true),
-                    Title = c.String(),
-                    ReleaseDate = c.DateTime(nullable: false),
-                    Genre = c.String(),
-                    Price = c.Decimal(nullable: false, precision: 18, scale: 2),
+                    Nama = c.String(),
+                    Alamat = c.String(),
                 })
                 .PrimaryKey(t => t.Id);
         }
         
         public override void Down()
         {
+            DropTable("dbo.Employees");
         }
     }
 }

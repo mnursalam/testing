@@ -8,7 +8,7 @@ namespace MvcTesting.Models
     public class Employee
     {
         public int Id { get; set; }
-        public string nama { get; set; }
-        public string alamat { get; set; }
+        public string Nama { get; set; }
+        public string Alamat { get; set; }
     }
 }

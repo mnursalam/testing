@@ -194,6 +194,10 @@
     <Compile Include="Migrations\201306250459262_RemoveSukuOnAct.Designer.cs">
       <DependentUpon>201306250459262_RemoveSukuOnAct.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201306250502314_AddTableEmployee.cs" />
+    <Compile Include="Migrations\201306250502314_AddTableEmployee.Designer.cs">
+      <DependentUpon>201306250502314_AddTableEmployee.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Act.cs" />
@@ -362,6 +366,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201306250459262_RemoveSukuOnAct.resx">
       <DependentUpon>201306250459262_RemoveSukuOnAct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201306250502314_AddTableEmployee.resx">
+      <DependentUpon>201306250502314_AddTableEmployee.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
