@@ -140,6 +140,19 @@ namespace MvcTesting.Controllers
             return PartialView("Page_form");
         }
 
+        [HttpPost]
+        public ActionResult ajax_create(Movie movie)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Movies.Add(movie);
+                db.SaveChanges();
+                return PartialView("ajax_list");
+            }
+
+            return PartialView("Page_form");
+        }
+
         protected override void Dispose(bool disposing)
         {
             db.Dispose();
