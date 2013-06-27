@@ -11,7 +11,7 @@ namespace MvcTesting.Controllers
 {
     public class ActController : Controller
     {
-        private ActDBContext db = new ActDBContext();
+        private BusinessLogic db = new BusinessLogic();
 
         //
         // GET: /Act/
@@ -69,8 +69,7 @@ namespace MvcTesting.Controllers
 
         public ActionResult Edit(int id = 0)
         {
-            Act act = db.Acts.Find(id);
-            Console.WriteLine("1================================");
+            Act act = db.Acts.Find(id);            
             PopulateMoviesDropDownList2(act.MovieID);
             PopulateStoreDropDownList(act.StoreID);
             PopulateDropdownJenisKelamin(act.JenisKelamin);
@@ -91,7 +90,10 @@ namespace MvcTesting.Controllers
             {
                 db.Entry(act).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                // jika beda controller
+                return RedirectToAction("multiple_list", "movie");
+                //Jika satu controller
+                //return RedirectToAction("Index");
             }
             return View(act);
         }
