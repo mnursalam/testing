@@ -6,7 +6,7 @@
 
 @helper Pagination(PagedList.IPagedList<MvcTesting.Models.Movie> model)
 {
-    @Html.Raw("Page "); @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) <text>of</text> @Model.PageCount
+    @Html.Raw("Page "); @Html.TextBox("input_page", (Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber), null,  new Dictionary<string, object>(){{ "style", "width:20px;" }});  <text>of</text> @Model.PageCount
     if (Model.HasPreviousPage)
     {
         @Ajax.ActionLink("First", "ajax_list", "Movie", new { page = 1}, 
@@ -99,3 +99,17 @@
    @Pagination(Model)    
 </div>
 
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+ <script type="text/javascript">        
+   $("#input_page").bind('keypress', function (e) {
+     if (e.keyCode == 13) { //Enter keycode
+       var url_value = "/movie/ajax_list?page=" + this.value;
+       $.ajax({
+         url: url_value,
+           success: function (data) {
+           $('#result').html(data);
+         }
+      });
+     }
+   });
+ </script>

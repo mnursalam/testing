@@ -53,3 +53,4 @@ D:\WGS\dotnet\MvcTesting\MvcTesting\obj\Debug\MvcTesting.Migrations.addSeveralIt
 D:\WGS\dotnet\MvcTesting\MvcTesting\obj\Debug\MvcTesting.csproj.GenerateResource.Cache
 D:\WGS\dotnet\MvcTesting\MvcTesting\obj\Debug\MvcTesting.dll
 D:\WGS\dotnet\MvcTesting\MvcTesting\obj\Debug\MvcTesting.pdb
+D:\WGS\dotnet\MvcTesting\MvcTesting\obj\Debug\MvcTesting.csprojResolveAssemblyReference.cache
