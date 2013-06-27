@@ -9,8 +9,9 @@ namespace MvcTesting.Models
 {
     public class ActDBContext : DbContext        
     {
-        public static string ConnectionString { get; set; }
-        public ActDBContext() : base(ConnectionString ?? "dbconn1")
+        //public static string ConnectionString { get; set; }
+        //public ActDBContext() : base(ConnectionString ?? "dbconn1")
+        public ActDBContext() : base("dbconn1")
         {
         }
         public DbSet<Act> Acts { get; set; } 

@@ -18,8 +18,6 @@ namespace MvcTesting.Controllers
 
         public ActionResult Index()
         {
-            System.Diagnostics.Debug.WriteLine("ada bro=====================");
-            System.Console.WriteLine("Asep bro===");
             var stores = db.Stores.Include(c => c.Acts);
             return View(stores.ToList());
         }
@@ -94,10 +92,7 @@ namespace MvcTesting.Controllers
 
         public ActionResult Delete(int id = 0)
         {
-            //Store store = db.Stores.Find(id);            
-            Store store = db.Stores.Include(c => c.Acts).
-                Where(i => i.id == id).First();
-            store.delete_data(db);
+            Store store = db.Stores.Find(id);                        
             if (store == null)
             {
                 return HttpNotFound();
@@ -111,11 +106,11 @@ namespace MvcTesting.Controllers
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {
-            Response.Write("a");
-            //Store store = db.Stores.Find(id);
+            Console.WriteLine("===================================a");
             Store store = db.Stores.Include(c => c.Acts).
                 Where(i => i.id == id).First();
-            store.delete_data(db);
+            db.Stores.Remove(store);
+            db.SaveChanges();
             return RedirectToAction("Index");
         }
 

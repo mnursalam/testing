@@ -13,6 +13,10 @@ namespace MvcTesting.Models
         public int countJual { get; set; }
         public virtual ICollection<Act> Acts { get; set; }
 
+        public Store()
+        {
+        }
+
         public void delete_data(ActDBContext db){
             db.Stores.Remove(this);
             db.SaveChanges();

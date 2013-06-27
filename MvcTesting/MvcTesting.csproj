@@ -194,10 +194,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\aspnet-MvcTesting-20130618100803.mdf" />
-    <Content Include="App_Data\aspnet-MvcTesting-20130618100803_log.ldf">
-      <DependentUpon>aspnet-MvcTesting-20130618100803.mdf</DependentUpon>
-    </Content>
     <Content Include="Content\PagedList.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
@@ -339,6 +335,7 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Data\" />
     <Folder Include="NewFolder1\" />
   </ItemGroup>
   <ItemGroup>

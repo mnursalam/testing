@@ -17,6 +17,7 @@ namespace MvcTesting.Models
         public int Status { get; set; }
         public int Pendidikan { get; set; }
         public String Description { get; set; }
+
         public int MovieID { get; set; }
         public Movie Movies { get; set; }
         public int StoreID { get; set; }

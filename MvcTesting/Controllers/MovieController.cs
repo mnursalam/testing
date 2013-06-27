@@ -7,6 +7,9 @@ using System.Web;
 using System.Web.Mvc;
 using MvcTesting.Models;
 using PagedList;
+using DotNetOpenAuth.AspNet;
+using Microsoft.Web.WebPages.OAuth;
+using System.Web.Security;
 
 namespace MvcTesting.Controllers
 {
@@ -18,7 +21,7 @@ namespace MvcTesting.Controllers
         // GET: /Movie/
 
         public ActionResult Index(int? page)
-        {
+        {            
             return View(db.getPaginateListMovies(page));
         }
 
