@@ -6,3 +6,7 @@
 <br />
 @{ Html.RenderAction("partial_acts", "Movie"); }
 @{ Html.RenderAction("partial_movies", "Movie"); }
+
+@section scripts{  
+  @Scripts.Render("~/bundles/jqueryval")
+}
