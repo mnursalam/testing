@@ -100,7 +100,7 @@
 </div>
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
- <script type="text/javascript">        
+<script type="text/javascript">        
    $("#input_page").bind('keypress', function (e) {
      if (e.keyCode == 13) { //Enter keycode
        var url_value = "/movie/ajax_list?page=" + this.value;
@@ -112,4 +112,23 @@
       });
      }
    });
+
+   $("#input_page").keydown(function (event) {
+       // Allow: backspace, delete, tab, escape, and enter
+       if (event.keyCode == 46 || event.keyCode == 8 || event.keyCode == 9 || event.keyCode == 27 || event.keyCode == 13 ||
+           // Allow: Ctrl+A
+           (event.keyCode == 65 && event.ctrlKey === true) ||
+           // Allow: home, end, left, right
+           (event.keyCode >= 35 && event.keyCode <= 39)) {
+           // let it happen, don't do anything
+           return;
+       }
+       else {
+           // Ensure that it is a number and stop the keypress
+           if (event.shiftKey || (event.keyCode < 48 || event.keyCode > 57) && (event.keyCode < 96 || event.keyCode > 105)) {
+               event.preventDefault();
+           }
+       }
+   });
+   
  </script>
