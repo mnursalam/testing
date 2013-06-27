@@ -46,3 +46,5 @@ D:\wgs\dotnet\MvcTesting\MvcTesting.Tests\bin\Debug\DotNetOpenAuth.OpenId.xml
 D:\wgs\dotnet\MvcTesting\MvcTesting.Tests\obj\Debug\MvcTesting.Tests.csprojResolveAssemblyReference.cache
 D:\wgs\dotnet\MvcTesting\MvcTesting.Tests\obj\Debug\MvcTesting.Tests.dll
 D:\wgs\dotnet\MvcTesting\MvcTesting.Tests\obj\Debug\MvcTesting.Tests.pdb
+D:\wgs\dotnet\MvcTesting\MvcTesting.Tests\bin\Debug\PagedList.dll
+D:\wgs\dotnet\MvcTesting\MvcTesting.Tests\bin\Debug\PagedList.xml

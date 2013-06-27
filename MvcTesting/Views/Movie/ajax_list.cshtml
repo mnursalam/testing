@@ -1,7 +1,45 @@
-﻿@model IEnumerable<MvcTesting.Models.Movie>
+﻿@model PagedList.IPagedList<MvcTesting.Models.Movie>
 
 @{
     ViewBag.Title = "Index";
+}
+
+@helper Pagination(PagedList.IPagedList<MvcTesting.Models.Movie> model)
+{
+    @Html.Raw("Page "); @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) <text>of</text> @Model.PageCount
+    if (Model.HasPreviousPage)
+    {
+        @Ajax.ActionLink("First", "ajax_list", "Movie", new { page = 1}, 
+                 new AjaxOptions { HttpMethod = "GET", 
+                 InsertionMode = InsertionMode.Replace, 
+                 UpdateTargetId = "result"})
+        
+        @Html.Raw(" | ");
+        @Ajax.ActionLink("Previous", "ajax_list", new {page = Model.PageNumber - 1}, 
+                 new AjaxOptions { HttpMethod = "GET", 
+                 InsertionMode = InsertionMode.Replace, 
+                 UpdateTargetId = "result"})
+    }
+    else{
+     @:First | Previous
+    }
+    @Html.Raw(" | ")
+    if (Model.HasNextPage)
+    {
+        @Ajax.ActionLink("Next", "ajax_list", "Movie", new {page = Model.PageNumber + 1}, 
+                 new AjaxOptions { HttpMethod = "GET", 
+                 InsertionMode = InsertionMode.Replace, 
+                 UpdateTargetId = "result"})
+        @Html.Raw(" | "); 
+        @Ajax.ActionLink("Last", "ajax_list", new {page = Model.PageCount}, 
+                 new AjaxOptions { HttpMethod = "GET", 
+                 InsertionMode = InsertionMode.Replace, 
+                 UpdateTargetId = "result"})
+    }
+    else{
+     @:Next | Last     
+    }
+        
 }
 
 <h2>ajax_list</h2>
@@ -10,16 +48,16 @@
 <table>
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Title)
+            @Html.DisplayNameFor(model => model.First().Title)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ReleaseDate)
+            @Html.DisplayNameFor(model => model.First().ReleaseDate)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Genre)
+            @Html.DisplayNameFor(model => model.First().Genre)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Price)
+            @Html.DisplayNameFor(model => model.First().Price)
         </th>
         <th></th>
     </tr>
@@ -54,6 +92,10 @@
         </td>
     </tr>
 }
-
+   
 </table>
+
+<div>
+   @Pagination(Model)    
+</div>
 

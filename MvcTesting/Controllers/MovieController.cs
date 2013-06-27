@@ -6,19 +6,20 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using MvcTesting.Models;
+using PagedList;
 
 namespace MvcTesting.Controllers
 {
     public class MovieController : Controller
     {
-        private ActDBContext db = new ActDBContext();
+        private BusinessLogic db = new BusinessLogic();
 
         //
         // GET: /Movie/
 
-        public ActionResult Index()
+        public ActionResult Index(int? page)
         {
-            return View(db.Movies.ToList());
+            return View(db.getPaginateListMovies(page));
         }
 
         //
@@ -78,9 +79,8 @@ namespace MvcTesting.Controllers
         public ActionResult Edit(Movie movie)
         {
             if (ModelState.IsValid)
-            {                
-                db.Entry(movie).State = EntityState.Modified;
-                db.SaveChanges();
+            {
+                db.update_data(movie);
                 return RedirectToAction("Index");
             }
             return View(movie);
@@ -97,6 +97,21 @@ namespace MvcTesting.Controllers
                 return HttpNotFound();
             }
             return View(movie);
+        }
+
+        public ActionResult multiple_list()
+        {
+            return View();
+        }
+
+        public ActionResult partial_movies(int? page)
+        {            
+            return PartialView("partial_movies", db.getPaginateListMovies(page));
+        }
+
+        public ActionResult partial_acts()
+        {
+            return PartialView("partial_acts", db.Acts.ToList());
         }
 
         //
@@ -125,16 +140,14 @@ namespace MvcTesting.Controllers
             return View();
         }
 
-        public ActionResult ajax_page()
-        {
-            var list = db.Movies.ToList();
-            return View(list);
+        public ActionResult ajax_page(int? page)
+        {            
+            return View(db.getPaginateListMovies(page));
         }
 
-        public ActionResult ajax_list()
-        {
-            var list = db.Movies.ToList();
-            return PartialView("ajax_list", list);
+        public ActionResult ajax_list(int? page)
+        {        
+            return PartialView("ajax_list", db.getPaginateListMovies(page));
         }
 
         public ActionResult ajax_new_form(string data = "")
@@ -163,15 +176,15 @@ namespace MvcTesting.Controllers
         }
 
         [HttpPost]
-        public ActionResult ajax_create(Movie movie)
+        public ActionResult ajax_create(Movie _movie)
         {
             if (ModelState.IsValid)
             {
-                db.Movies.Add(movie);
+                db.Movies.Add(_movie);
                 db.SaveChanges();
-                return PartialView("ajax_list", db.Movies.ToList());
+                return PartialView("ajax_list", db.getPaginateListMovies());
             }
-            return PartialView("Page_form", movie);
+            return PartialView("Page_form", _movie);
         }
 
         [HttpPost]
@@ -191,15 +204,14 @@ namespace MvcTesting.Controllers
         }
 
         [HttpPost]
-        public ActionResult ajax_update2(Movie movie)
+        public ActionResult ajax_update2(Movie _movie)
         {
             if (ModelState.IsValid)
-            {                
-                db.Entry(movie).State = EntityState.Modified;
-                db.SaveChanges();
-                return PartialView("ajax_list", db.Movies.ToList());
+            {
+                db.update_data(_movie);
+                return PartialView("ajax_list", db.getPaginateListMovies());
             }
-            return PartialView("ajax_edit", movie);
+            return PartialView("ajax_edit", _movie);
         }
         
         [HttpPost]
@@ -208,7 +220,7 @@ namespace MvcTesting.Controllers
             Movie movie = db.Movies.Find(id);
             db.Movies.Remove(movie);
             db.SaveChanges();
-            return PartialView("ajax_list", db.Movies.ToList());
+            return PartialView("ajax_list", db.getPaginateListMovies());
         }
 
         protected override void Dispose(bool disposing)
@@ -216,5 +228,6 @@ namespace MvcTesting.Controllers
             db.Dispose();
             base.Dispose(disposing);
         }
-    }
+    }    
+    
 }

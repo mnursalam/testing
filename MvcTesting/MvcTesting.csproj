@@ -40,6 +40,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList">
+      <HintPath>..\packages\PagedList.1.16.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc">
+      <HintPath>..\packages\PagedList.Mvc.4.3.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
@@ -181,6 +187,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Act.cs" />
+    <Compile Include="Models\BusinessLogic.cs" />
     <Compile Include="Models\dbContext.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Models\Store.cs" />
@@ -191,6 +198,7 @@
     <Content Include="App_Data\aspnet-MvcTesting-20130618100803_log.ldf">
       <DependentUpon>aspnet-MvcTesting-20130618100803.mdf</DependentUpon>
     </Content>
+    <Content Include="Content\PagedList.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -323,6 +331,9 @@
     <Content Include="Views\Store\Edit.cshtml" />
     <Content Include="Views\Store\Delete.cshtml" />
     <Content Include="Views\Movie\Page_form.cshtml" />
+    <Content Include="Views\Movie\multiple_list.cshtml" />
+    <Content Include="Views\Movie\partial_movies.cshtml" />
+    <Content Include="Views\Movie\partial_acts.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
